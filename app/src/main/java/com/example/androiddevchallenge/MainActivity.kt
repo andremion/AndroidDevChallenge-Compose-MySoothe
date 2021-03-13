@@ -35,6 +35,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.ui.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
 
@@ -59,7 +60,6 @@ private fun Window.makeTransparentStatusBar() {
 
 @Composable
 fun MyApp() {
-    val isLightTheme = MaterialTheme.colors.isLight
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background,
@@ -74,7 +74,9 @@ fun MyApp() {
                 )
             }
             composable("login") {
-                Text("Login")
+                LoginScreen(
+                    onLoginClick = { navController.navigate("home") }
+                )
             }
             composable("home") {
                 Text("Home")
