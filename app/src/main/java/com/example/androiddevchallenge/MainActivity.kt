@@ -15,19 +15,26 @@
  */
 package com.example.androiddevchallenge
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.view.Window
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.makeTransparentStatusBar()
         setContent {
             MyTheme {
                 MyApp()
@@ -36,11 +43,18 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-// Start building your app here!
+private fun Window.makeTransparentStatusBar() {
+    decorView.systemUiVisibility =
+        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+    statusBarColor = Color.TRANSPARENT
+    WindowInsetsControllerCompat(this, decorView).isAppearanceLightStatusBars = true
+}
+
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+    val isLightTheme = MaterialTheme.colors.isLight
+    Surface(color = MaterialTheme.colors.background, shape = RoundedCornerShape(16.dp)) {
+        WelcomeScreen(isLightTheme)
     }
 }
 

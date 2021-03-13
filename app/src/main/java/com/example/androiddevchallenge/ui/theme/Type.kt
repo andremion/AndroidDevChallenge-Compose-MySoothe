@@ -24,27 +24,23 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
 private val KulimPark = FontFamily(
-    listOf(
-        Font(
-            resId = R.font.kulimpark_regular,
-            weight = FontWeight.Normal
-        ),
-        Font(
-            resId = R.font.kulimpark_light,
-            weight = FontWeight.Light,
-        ),
+    Font(
+        resId = R.font.kulimpark_regular,
+        weight = FontWeight.Normal
+    ),
+    Font(
+        resId = R.font.kulimpark_light,
+        weight = FontWeight.Light,
     )
 )
 private val Lato = FontFamily(
-    listOf(
-        Font(
-            resId = R.font.lato_regular,
-            weight = FontWeight.Normal
-        ),
-        Font(
-            resId = R.font.lato_bold,
-            weight = FontWeight.Bold,
-        ),
+    Font(
+        resId = R.font.lato_regular,
+        weight = FontWeight.Normal
+    ),
+    Font(
+        resId = R.font.lato_bold,
+        weight = FontWeight.Bold,
     )
 )
 
