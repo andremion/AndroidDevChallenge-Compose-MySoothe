@@ -19,7 +19,11 @@ import com.example.androiddevchallenge.ui.component.SecondaryButton
 import java.util.*
 
 @Composable
-fun WelcomeScreen(isLightTheme: Boolean) {
+fun WelcomeScreen(
+    isLightTheme: Boolean,
+    onSignUpClick: () -> Unit,
+    onLoginInClick: () -> Unit
+) {
     Image(
         modifier = Modifier.fillMaxSize(),
         painter = painterResource(
@@ -46,16 +50,14 @@ fun WelcomeScreen(isLightTheme: Boolean) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
-            text = stringResource(R.string.welcome_screen_signup_button)
-        ) {
-
-        }
+            text = stringResource(R.string.welcome_screen_signup_button),
+            onClick = onSignUpClick
+        )
         SecondaryButton(
             modifier = Modifier.fillMaxWidth(),
-            text = stringResource(R.string.welcome_screen_login_button)
-        ) {
-
-        }
+            text = stringResource(R.string.welcome_screen_login_button),
+            onClick = onLoginInClick
+        )
     }
 }
 

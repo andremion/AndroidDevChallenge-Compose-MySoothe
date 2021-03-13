@@ -21,13 +21,20 @@ import android.view.View
 import android.view.Window
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
 
@@ -53,8 +60,27 @@ private fun Window.makeTransparentStatusBar() {
 @Composable
 fun MyApp() {
     val isLightTheme = MaterialTheme.colors.isLight
-    Surface(color = MaterialTheme.colors.background, shape = RoundedCornerShape(16.dp)) {
-        WelcomeScreen(isLightTheme)
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background,
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        val navController = rememberNavController()
+        NavHost(navController, startDestination = "welcome") {
+            composable("welcome") {
+                WelcomeScreen(
+                    isLightTheme,
+                    onSignUpClick = {},
+                    onLoginInClick = { navController.navigate("login") }
+                )
+            }
+            composable("login") {
+                Text("Login")
+            }
+            composable("home") {
+                Text("Home")
+            }
+        }
     }
 }
 
