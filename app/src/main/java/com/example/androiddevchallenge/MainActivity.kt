@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+@Suppress("DEPRECATION")
 private fun Window.makeTransparentStatusBar() {
     decorView.systemUiVisibility =
         View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -81,7 +82,11 @@ fun MyApp() {
             }
             composable(MainNavigation.Login.name) {
                 LoginScreen(
-                    onLoginClick = { navController.navigate(MainNavigation.Home.name) }
+                    onLoginClick = {
+                        navController.navigate(MainNavigation.Home.name) {
+                            popUpTo(navController.graph.startDestination) { inclusive = true }
+                        }
+                    }
                 )
             }
             composable(MainNavigation.Home.name) {
