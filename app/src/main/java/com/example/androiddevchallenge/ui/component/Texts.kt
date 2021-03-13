@@ -16,7 +16,6 @@
 package com.example.androiddevchallenge.ui.component
 
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
@@ -28,7 +27,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
 fun InputText(
@@ -40,12 +42,12 @@ fun InputText(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     onValueChange: (String) -> Unit
 ) {
+    val textStyle = MaterialTheme.typography.body1.copy(baselineShift = BaselineShift(-0.2f))
     TextField(
-        modifier = modifier
-            .padding(top = 4.dp)
-            .height(56.dp),
+        modifier = modifier.height(56.dp),
         value = value,
         onValueChange = onValueChange,
+        textStyle = textStyle,
         leadingIcon = {
             leadingIcon?.let {
                 Icon(
@@ -58,11 +60,27 @@ fun InputText(
         placeholder = {
             Text(
                 text = placeholder,
-                style = MaterialTheme.typography.body1
+                style = textStyle
             )
         },
         visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions,
         colors = TextFieldDefaults.textFieldColors(backgroundColor = MaterialTheme.colors.surface)
     )
+}
+
+@Preview
+@Composable
+private fun PlaceholderPreview() {
+    MyTheme {
+        InputText(placeholder = "placeholder", value = "", onValueChange = { })
+    }
+}
+
+@Preview
+@Composable
+private fun ValuePreview() {
+    MyTheme {
+        InputText(placeholder = "", value = "Value", onValueChange = { })
+    }
 }
