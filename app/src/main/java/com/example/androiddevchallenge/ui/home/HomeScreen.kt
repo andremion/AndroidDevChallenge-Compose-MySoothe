@@ -128,7 +128,8 @@ fun HomeScreen() {
         floatingActionButton = {
             FloatingActionButton(
                 backgroundColor = MaterialTheme.colors.primary,
-                onClick = { /*TODO*/ }) {
+                onClick = { }
+            ) {
                 Icon(
                     modifier = Modifier.size(24.dp),
                     imageVector = Icons.Filled.PlayArrow,

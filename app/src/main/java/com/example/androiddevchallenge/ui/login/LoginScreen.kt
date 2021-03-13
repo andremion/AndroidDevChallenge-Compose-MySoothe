@@ -101,3 +101,19 @@ fun LoginScreen(onLoginClick: () -> Unit) {
         }
     }
 }
+
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+private fun LightPreview() {
+    MyTheme {
+        LoginScreen(onLoginClick = { })
+    }
+}
+
+@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@Composable
+private fun DarkPreview() {
+    MyTheme(darkTheme = true) {
+        LoginScreen(onLoginClick = { })
+    }
+}
