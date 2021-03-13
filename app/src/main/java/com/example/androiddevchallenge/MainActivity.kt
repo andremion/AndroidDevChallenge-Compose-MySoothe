@@ -69,7 +69,6 @@ fun MyApp() {
         NavHost(navController, startDestination = "welcome") {
             composable("welcome") {
                 WelcomeScreen(
-                    isLightTheme,
                     onSignUpClick = {},
                     onLoginInClick = { navController.navigate("login") }
                 )
