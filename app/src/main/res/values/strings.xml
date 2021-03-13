@@ -20,4 +20,12 @@
     <string name="login_screen_login_button">Log in</string>
     <string name="login_screen_signup_text">Don\'t have an account?&#160;</string>
     <string name="login_screen_signup_button">Sign up</string>
+
+    <string name="home_screen_field_search">Search</string>
+    <string name="home_screen_section_favorites">Favorite collections</string>
+    <string name="home_screen_section_body">Align you body</string>
+    <string name="home_screen_section_mind">Align your mind</string>
+    <string name="home_screen_play_button">Play</string>
+    <string name="home_screen_navigation_home">Home</string>
+    <string name="home_screen_navigation_profile">Profile</string>
 </resources>

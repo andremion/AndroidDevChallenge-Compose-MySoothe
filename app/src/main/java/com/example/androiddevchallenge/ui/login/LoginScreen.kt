@@ -2,7 +2,13 @@ package com.example.androiddevchallenge.ui.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -19,10 +25,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.component.InputText
 import com.example.androiddevchallenge.ui.component.PrimaryButton
+import com.example.androiddevchallenge.ui.theme.MyTheme
 import java.util.*
 
 @Composable
@@ -50,7 +58,7 @@ fun LoginScreen(onLoginClick: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
-            label = stringResource(R.string.login_screen_field_email_label),
+            placeholder = stringResource(R.string.login_screen_field_email_label),
             value = email,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             onValueChange = { email = it }
@@ -61,7 +69,7 @@ fun LoginScreen(onLoginClick: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
-            label = stringResource(R.string.login_screen_field_password_label),
+            placeholder = stringResource(R.string.login_screen_field_password_label),
             value = password,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
