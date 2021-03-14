@@ -6,7 +6,8 @@
 ## :scroll: Description
 Implementation of [design specs](specs) provided for the propose of [Android Dev Challenge Week #3](https://android-developers.googleblog.com/2021/03/android-dev-challenge-3.html)
 
-(Português-🇧🇷)
+#### Português-🇧🇷
+
 Implementação das [especificações de design](specs) fornecida para o [Android Dev Challenge Week #3](https://android-developers.googleblog.com/2021/03/android-dev-challenge-3.html)
 
 
@@ -23,7 +24,8 @@ It was annoying when I started to use [Navigation classes](https://developer.and
 
 Another thing I've noticed was setting a text style smaller than the default of a custom height `TextField`, makes the placeholder and labels be not vertically centralized. I needed to do a small [work around](https://github.com/andremion/AndroidDevChallenge-Compose-MySoothe/blob/main/app/src/main/java/com/example/androiddevchallenge/ui/component/Texts.kt#L45) to minimize that. 
 
-(Português-🇧🇷)
+#### Português-🇧🇷
+
 Eu gostei como as [especificações de design](specs) foram feitas.
 Elas tem umas abordagens diferentes. Por exemplo, o fundo de tela feito através de uma mistura de *svg* com uma cor do tema. Foi a primeira vez que eu usei *svg* para plano de fundo.
 
@@ -32,7 +34,7 @@ Eu consegui usando [SpanStyle](https://developer.android.com/reference/kotlin/an
 Mesmo usando `MaterialTheme.typography.h1`, a fonte parecia diferente...
 Na verdade, não era pra usar *string* porque foi fornecido arquivos *svg* para o logo 🤦🏻‍♂️
 
-Foi chato quando eu comecei a usar [Navigation classes](https://developer.android.com/jetpack/compose/navigation?hl=pt-br) e o Preview parou de funcionar. Acho que o time do *Jetpack Compose* ainda precisa melhorar aquilo.
+Foi chato quando eu comecei a usar [Navigation classes](https://developer.android.com/jetpack/compose/navigation?hl=pt-br) e o [Preview](https://developer.android.com/jetpack/compose/tooling#preview?hl=pt-br) parou de funcionar. Acho que o time do *Jetpack Compose* ainda precisa melhorar aquilo.
 
 Outra coisa que eu notei foi configurar um estilo de texto menor que o padrão do `TextField` com uma altura personalizada, faz o *placeholder* e o *label* ficarem descentralizado verticalmente. I precisei fazer um [artifício tecnológico não autorizado](https://github.com/andremion/AndroidDevChallenge-Compose-MySoothe/blob/main/app/src/main/java/com/example/androiddevchallenge/ui/component/Texts.kt#L45) para corrigir.
 
